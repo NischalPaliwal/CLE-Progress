@@ -42,7 +42,7 @@ Dataset for all three: [Superstore dataset (Kaggle)](https://www.kaggle.com/data
 - Answered business questions: monthly sales trend and top 5 customers by sales.
 - Validated row counts and checked for duplicates.
 - Deliverable: SQL script, query results and brief insights.
-- Repository: `<add GitHub link>`
+- Repository: `https://github.com/NischalPaliwal/CLE-Progress/tree/main/SQL`
 
 **Project 2: Advanced SQL: Subqueries, CTEs & Window Functions**
 - Created `Customers`, `Orders` and `Products` tables from the raw dataset.
@@ -51,7 +51,7 @@ Dataset for all three: [Superstore dataset (Kaggle)](https://www.kaggle.com/data
 - Applied `ROW_NUMBER`/`RANK` to find the top 3 orders per customer.
 - Combined JOIN + CTE + window functions in one final report query to answer: top customers, single-order customers, above-average-sales customers.
 - Deliverable: SQL script, results and brief insights.
-- Repository: `<add GitHub link>`
+- Repository: `https://github.com/NischalPaliwal/CLE-Progress/tree/main/SQL`
 
 **Project 3: SCD Type 2 Upsert Simulation using MERGE**
 - Created a customer dimension with `effective_date`, `end_date` and current-flag columns and loaded an initial batch.
@@ -59,7 +59,7 @@ Dataset for all three: [Superstore dataset (Kaggle)](https://www.kaggle.com/data
 - Wrote a `MERGE` statement that closes out old rows and inserts new versions.
 - Validated history with point-in-time queries.
 - Deliverable: SQL script, before/after table snapshots and a short explanation.
-- Repository: `<add GitHub link>`
+- Repository: `https://github.com/NischalPaliwal/CLE-Progress/tree/main/SQL`
 
 ---
 
@@ -95,7 +95,9 @@ Dataset for all three: [Superstore dataset (Kaggle)](https://www.kaggle.com/data
 - Assigned RBAC roles (Reader/Contributor) for ADF-to-storage access.
 - Executed and monitored the pipeline and validated the output file.
 - Deliverable: screenshots (resource group, storage, ADF, pipeline run) and a short summary.
-- Repository: `<add GitHub link>`
+- Repository: `https://github.com/NischalPaliwal/azure-data-factory-code`
+- Image:
+  <img width="1917" height="921" alt="Screenshot 2026-11-18 230824" src="https://github.com/user-attachments/assets/bb223a58-ff36-4a2d-9a60-e8d960d0a9ed" />
 
 **Project 2: Metadata-Driven Ingestion Framework**
 - Created a control table listing source file names and target locations.
@@ -103,12 +105,18 @@ Dataset for all three: [Superstore dataset (Kaggle)](https://www.kaggle.com/data
 - Added logging of success/failure per file (row counts and run timestamps).
 - Tested with 3 or more sample files.
 - Deliverable: pipeline export, config table and execution log.
-- Repository: `<add GitHub link>`
+- Repository: `https://github.com/NischalPaliwal/azure-data-factory-code`
+- Images:
+  <img width="1917" height="923" alt="Screenshot 2026-11-18 225124" src="https://github.com/user-attachments/assets/7d45467f-8a54-4679-98b3-71c09edded16" />
+  <img width="1917" height="922" alt="Screenshot 2026-11-18 225139" src="https://github.com/user-attachments/assets/7322ff88-d09c-4574-973a-4b79a5ebd05a" />
 
 **Project 3: Incremental Ingestion Pipeline with Watermarks**
 - Implemented watermark-based incremental load on `dbo.Orders` using two `Lookup` activities, a `Copy` activity with upsert, and a stored procedure that updates the watermark only after a successful copy.
-- Repository: `<add GitHub link>`
-
+- Repository: `https://github.com/NischalPaliwal/azure-data-factory-code`
+- Images:
+  <img width="1917" height="922" alt="Screenshot 2026-11-19 151213" src="https://github.com/user-attachments/assets/0426418f-0de9-4281-b9cf-d8877d58b70c" />
+  <img width="1476" height="862" alt="Screenshot 2026-11-19 152551" src="https://github.com/user-attachments/assets/9b3b020f-511c-4732-bd58-dd4024b8e43d" />
+  
 ---
 
 ## 3. Data Modelling
@@ -136,4 +144,5 @@ Dataset for all three: [Superstore dataset (Kaggle)](https://www.kaggle.com/data
 - Drew an ER diagram with cardinalities.
 - Normalized the design to 3NF and defined primary/foreign keys for each table.
 - Deliverable: ER diagram, table DDL and a short write-up.
-- Repository: `<add GitHub link>`
+- Image:
+  <img width="986" height="1583" alt="My First Board" src="https://github.com/user-attachments/assets/e3bec2b8-3c86-4a53-8f81-7ba7b7050da1" />
