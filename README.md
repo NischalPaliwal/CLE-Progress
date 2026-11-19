@@ -1,7 +1,7 @@
 # Big Data & EDW Learning Progress Report
 
 **Learner:** Nischal Paliwal  
-**Roadmap:** Big Data & EDW 
+**Roadmap:** Big Data & EDW
 **Report type:** Mentor & RM review  
 **Report date:** 19 November 2026
 
