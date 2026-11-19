@@ -146,3 +146,59 @@ Dataset for all three: [Superstore dataset (Kaggle)](https://www.kaggle.com/data
 - Deliverable: ER diagram, table DDL and a short write-up.
 - Image:
   <img width="986" height="1583" alt="My First Board" src="https://github.com/user-attachments/assets/e3bec2b8-3c86-4a53-8f81-7ba7b7050da1" />
+- DDL:
+  ```
+  CREATE TABLE customers (
+    customer_id  INT IDENTITY(1,1) PRIMARY KEY,
+    email        VARCHAR(255) NOT NULL UNIQUE,
+    full_name    VARCHAR(150) NOT NULL
+  );
+  
+  CREATE TABLE addresses (
+      address_id   INT IDENTITY(1,1) PRIMARY KEY,
+      customer_id  INT NOT NULL,
+      address      VARCHAR(200) NOT NULL,
+      city         VARCHAR(100) NOT NULL,
+      postal_code  VARCHAR(20) NOT NULL,
+      country      VARCHAR(2) NOT NULL,
+      FOREIGN KEY (customer_id) REFERENCES customers(customer_id)
+  );
+  
+  CREATE TABLE categories (
+      category_id  INT IDENTITY(1,1) PRIMARY KEY,
+      name         VARCHAR(100) NOT NULL UNIQUE
+  );
+  
+  CREATE TABLE products (
+      product_id   INT IDENTITY(1,1) PRIMARY KEY,
+      category_id  INT NOT NULL,
+      sku          VARCHAR(50) NOT NULL UNIQUE,
+      name         VARCHAR(200) NOT NULL,
+      list_price   DECIMAL(10,2) NOT NULL,
+      FOREIGN KEY (category_id) REFERENCES categories(category_id)
+  );
+  
+  CREATE TABLE orders (
+      order_id         INT IDENTITY(1,1) PRIMARY KEY,
+      customer_id      INT NOT NULL,
+      ship_address_id  INT NOT NULL,
+      status           VARCHAR(20) NOT NULL DEFAULT 'pending',
+      ordered_at       DATETIME NOT NULL DEFAULT GETDATE(),
+      FOREIGN KEY (customer_id) REFERENCES customers(customer_id),
+      FOREIGN KEY (ship_address_id) REFERENCES addresses(address_id)
+  );
+  
+  CREATE TABLE order_items (
+      order_id    INT NOT NULL,
+      product_id  INT NOT NULL,
+      quantity    INT NOT NULL,
+      unit_price  DECIMAL(10,2) NOT NULL,
+      PRIMARY KEY (order_id, product_id),
+      FOREIGN KEY (order_id) REFERENCES orders(order_id),
+      FOREIGN KEY (product_id) REFERENCES products(product_id)
+  );
+  ```
+- Writeup:
+  1. 1NF: All columns are atomic. There are no repeating groups such as product1, product2. Items live in rows of order_items.
+  2. 2NF: order_items has the composite key (order_id, product_id). Its non-key columns, quantity and unit_price, depend on the whole key. Product attributes such as name and category live in products, since they depend only on product_id.
+  3. 3NF: No non-key column depends on another non-key column.
